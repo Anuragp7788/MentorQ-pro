@@ -1,0 +1,91 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0D0D0D;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    background: #1C1C1C;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #F9A826;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.content {
+    padding: 50px 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 20px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background: #F9A826;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background: #E69520;
+}
+
+.signup {
+    padding: 50px 20px;
+    background: #1C1C1C;
+}
+
+input, button {
+    padding: 15px;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+}
+
+input {
+    background: #FFF;
+    color: #000;
+}
+
+button {
+    background: #F9A826;
+    color: #FFF;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #E69520;
+}
+
+footer {
+    padding: 20px;
+    background: #0D0D0D;
+    font-size: 0.9em;
+}
