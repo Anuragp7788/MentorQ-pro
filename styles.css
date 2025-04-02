@@ -6,18 +6,16 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0a0a0a; /* Matte black background */
-    color: #d4d4d4; /* Soft light gray text */
+    background: #0a0a0a;
+    color: #d4d4d4;
     line-height: 1.8;
-    overflow-x: hidden;
 }
 
 header {
-    background: linear-gradient(135deg, #1a1a2e, #16213e); /* Deep navy gradient */
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
     color: #fff;
     padding: 40px 0;
     text-align: center;
-    position: relative;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -31,7 +29,7 @@ header {
 }
 
 .logo {
-    width: 200px; /* Larger logo */
+    width: 200px;
     transition: transform 0.3s ease;
 }
 
@@ -49,7 +47,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #c0c0c0; /* Silver for nav links */
+    color: #c0c0c0;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1em;
@@ -57,38 +55,41 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffd700; /* Gold hover effect */
+    color: #ffd700;
 }
 
-.hero {
-    padding: 80px 20px;
+.hero, .test-portal, .mentor-form, .contact, .privacy, .about {
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 30px;
+    text-align: center;
 }
 
 h1 {
-    font-family: 'Playfair Display', serif; /* Elegant font for brand name */
-    font-size: 4em;
-    color: #ffd700; /* Gold for premium feel */
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    color: #ffd700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .tagline {
     font-size: 1.5em;
     font-style: italic;
-    color: #c0c0c0; /* Silver tagline */
+    color: #c0c0c0;
     margin-bottom: 15px;
 }
 
-.hero p {
-    font-size: 1.3em;
+.hero p, .test-portal p, .mentor-form p, .contact p, .privacy p, .about p {
+    font-size: 1.2em;
     margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
     padding: 15px 40px;
-    background: #ffd700; /* Gold button */
-    color: #1a1a2e; /* Dark navy text */
+    background: #ffd700;
+    color: #1a1a2e;
     text-decoration: none;
     border-radius: 30px;
     font-weight: 700;
@@ -98,7 +99,7 @@ h1 {
 }
 
 .btn:hover {
-    background: #ffeb3b; /* Lighter gold */
+    background: #ffeb3b;
     transform: translateY(-3px);
 }
 
@@ -114,7 +115,6 @@ h1 {
     font-size: 2.5em;
     color: #ffd700;
     margin-bottom: 40px;
-    letter-spacing: 1px;
 }
 
 .feature-grid {
@@ -124,7 +124,7 @@ h1 {
 }
 
 .feature-item {
-    background: #1f1f1f; /* Slightly lighter dark gray */
+    background: #1f1f1f;
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
@@ -136,12 +136,12 @@ h1 {
 }
 
 .feature-item h3 {
-    color: #ffd700; /* Gold headings */
+    color: #ffd700;
     font-size: 1.4em;
     margin-bottom: 15px;
 }
 
-.signup, .mentor-cta {
+.signup {
     max-width: 900px;
     margin: 60px auto;
     padding: 40px;
@@ -151,19 +151,14 @@ h1 {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-.signup h2, .mentor-cta h2 {
+.signup h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5em;
     color: #ffd700;
     margin-bottom: 20px;
 }
 
-.signup p, .mentor-cta p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.signup form input {
+.signup form input, .mentor-form form input, .contact form input, .mentor-form form textarea, .contact form textarea {
     display: block;
     width: 100%;
     padding: 15px;
@@ -173,25 +168,54 @@ h1 {
     font-size: 1.1em;
     background: #2a2a2a;
     color: #d4d4d4;
-    transition: border-color 0.3s ease;
 }
 
-.signup form input:focus {
+.signup form input:focus, .mentor-form form input:focus, .contact form input:focus, .mentor-form form textarea:focus, .contact form textarea:focus {
     border-color: #ffd700;
     outline: none;
 }
 
-.signup form input::placeholder {
+.signup form input::placeholder, .mentor-form form input::placeholder, .contact form input::placeholder, .mentor-form form textarea::placeholder, .contact form textarea::placeholder {
     color: #888;
 }
 
-.signup form button {
+.signup form button, .mentor-form form button, .contact form button {
     width: 100%;
     margin-top: 20px;
 }
 
+.test-portal .portal-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.test-portal .option {
+    background: #1f1f1f;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    width: 300px;
+}
+
+.test-portal .option h3 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.privacy h3 {
+    color: #ffd700;
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
 footer {
-    background: #1a1a2e; /* Dark navy footer */
+    background: #1a1a2e;
     color: #d4d4d4;
     text-align: center;
     padding: 30px;
@@ -228,7 +252,8 @@ footer {
     .logo {
         width: 150px;
     }
-    .features, .signup, .mentor-cta {
-        padding: 20px;
+    .test-portal .portal-options {
+        flex-direction: column;
+        align-items: center;
     }
 }
