@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MentorQ - Elite JEE & NEET Mentorship</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <img src="logo.png" alt="MentorQ Logo" class="logo">
+            <img src="images/logo.png" alt="MentorQ Logo" class="logo">
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -18,46 +19,57 @@
                     <li><a href="become-mentor.html">Become a Mentor</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="#" onclick="showLogin()">Login</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="hero">
+        <div class="hero animate__animated animate__fadeIn">
             <h1>MentorQ</h1>
             <p class="tagline">Elite Mentorship for JEE & NEET Success</p>
             <p>Personalized Guidance from India’s Top Minds</p>
-            <a href="#signup" class="btn">Unlock Your Potential</a>
+            <a href="#signup" class="btn animate__animated animate__pulse animate__infinite">Unlock Your Potential</a>
         </div>
     </header>
 
+    <section id="login" class="login" style="display: none;">
+        <h2>Login to MentorQ</h2>
+        <form onsubmit="login(event)">
+            <input type="email" id="login-email" placeholder="Your Email" required>
+            <input type="password" id="login-password" placeholder="Your Password" required>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </section>
+
     <section class="features">
-        <h2>Excellence Redefined</h2>
+        <h2 class="animate__animated animate__fadeInUp">Excellence Redefined</h2>
         <div class="feature-grid">
-            <div class="feature-item">
+            <div class="feature-item animate__animated animate__fadeInUp animate__delay-1s">
                 <h3>1:1 Elite Mentorship</h3>
                 <p>Exclusive daily guidance from IITians & toppers.</p>
             </div>
-            <div class="feature-item">
+            <div class="feature-item animate__animated animate__fadeInUp animate__delay-2s">
                 <h3>Precision Study Plans</h3>
                 <p>Customized strategies for peak performance.</p>
             </div>
-            <div class="feature-item">
+            <div class="feature-item animate__animated animate__fadeInUp animate__delay-3s">
                 <h3>Advanced Analytics</h3>
                 <p>Track your progress with premium tools.</p>
             </div>
-            <div class="feature-item">
+            <div class="feature-item animate__animated animate__fadeInUp animate__delay-4s">
                 <h3>CBT Mastery</h3>
                 <p>Realistic test simulations for exam dominance.</p>
             </div>
         </div>
     </section>
 
-    <section id="signup" class="signup">
+    <section id="signup" class="signup animate__animated animate__fadeIn">
         <h2>Join the Elite</h2>
         <p>Elevate your preparation with MentorQ’s premium mentorship.</p>
-        <form action="https://your-form-handler.com" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone" required>
+        <form onsubmit="register(event)">
+            <input type="text" id="signup-name" placeholder="Your Name" required>
+            <input type="email" id="signup-email" placeholder="Your Email" required>
+            <input type="tel" id="signup-phone" placeholder="Your Phone" required>
+            <input type="password" id="signup-password" placeholder="Your Password" required>
             <button type="submit" class="btn">Enroll Now</button>
         </form>
     </section>
@@ -69,5 +81,46 @@
             <a href="contact.html">Contact Us</a>
         </div>
     </footer>
+
+    <script>
+        function showLogin() {
+            document.getElementById('login').style.display = 'block';
+        }
+
+        function register(event) {
+            event.preventDefault();
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const phone = document.getElementById('signup-phone').value;
+            const password = document.getElementById('signup-password').value;
+
+            let users = JSON.parse(localStorage.getItem('users') || '[]');
+            if (users.some(user => user.email === email)) {
+                alert('Email already registered!');
+                return;
+            }
+
+            users.push({ name, email, phone, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Registration successful! Please log in.');
+            document.querySelector('#signup form').reset();
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                alert('Login successful! Welcome, ' + user.name);
+                document.getElementById('login').style.display = 'none';
+            } else {
+                alert('Invalid email or password');
+            }
+        }
+    </script>
 </body>
 </html>
