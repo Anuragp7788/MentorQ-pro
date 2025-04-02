@@ -6,34 +6,37 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #1a1a1a; /* Dark gray background */
-    color: #e0e0e0; /* Light gray text for readability */
-    line-height: 1.6;
+    background: #0a0a0a; /* Matte black background */
+    color: #d4d4d4; /* Soft light gray text */
+    line-height: 1.8;
+    overflow-x: hidden;
 }
 
 header {
-    background: linear-gradient(135deg, #0d1b2a, #1b263b); /* Dark blue gradient */
+    background: linear-gradient(135deg, #1a1a2e, #16213e); /* Deep navy gradient */
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 0;
     text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .logo {
-    width: 350px; /* Increased logo size */
+    width: 200px; /* Larger logo */
     transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 nav ul {
@@ -42,13 +45,15 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: #b0c4de; /* Light steel blue for nav links */
+    color: #c0c0c0; /* Silver for nav links */
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -56,114 +61,149 @@ nav ul li a:hover {
 }
 
 .hero {
-    padding: 50px 20px;
+    padding: 80px 20px;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-family: 'Playfair Display', serif; /* Elegant font for brand name */
+    font-size: 4em;
+    color: #ffd700; /* Gold for premium feel */
     margin-bottom: 10px;
-    color: #ffd700; /* Gold for emphasis */
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #c0c0c0; /* Silver tagline */
+    margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    font-size: 1.3em;
+    margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 15px 40px;
     background: #ffd700; /* Gold button */
-    color: #0d1b2a; /* Dark blue text */
+    color: #1a1a2e; /* Dark navy text */
     text-decoration: none;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: background 0.3s ease;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 .btn:hover {
-    background: #ffeb3b; /* Lighter gold on hover */
+    background: #ffeb3b; /* Lighter gold */
+    transform: translateY(-3px);
 }
 
 .features {
-    max-width: 1200px;
-    margin: 40px auto;
+    max-width: 1300px;
+    margin: 60px auto;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .features h2 {
-    font-size: 2em;
-    color: #ffd700; /* Gold heading */
-    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #ffd700;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
 }
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .feature-item {
-    background: #2c2c2c; /* Darker gray for cards */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: #1f1f1f; /* Slightly lighter dark gray */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
 }
 
 .feature-item h3 {
-    color: #b0c4de; /* Light steel blue */
-    margin-bottom: 10px;
+    color: #ffd700; /* Gold headings */
+    font-size: 1.4em;
+    margin-bottom: 15px;
 }
 
 .signup, .mentor-cta {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #2c2c2c; /* Darker gray background */
-    border-radius: 10px;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #1f1f1f;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .signup h2, .mentor-cta h2 {
-    font-size: 2em;
-    color: #ffd700; /* Gold heading */
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #ffd700;
     margin-bottom: 20px;
+}
+
+.signup p, .mentor-cta p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
 .signup form input {
     display: block;
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #444; /* Dark border */
-    border-radius: 5px;
-    font-size: 1em;
-    background: #333; /* Dark input background */
-    color: #e0e0e0; /* Light text */
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 1.1em;
+    background: #2a2a2a;
+    color: #d4d4d4;
+    transition: border-color 0.3s ease;
+}
+
+.signup form input:focus {
+    border-color: #ffd700;
+    outline: none;
 }
 
 .signup form input::placeholder {
-    color: #888; /* Gray placeholder text */
+    color: #888;
 }
 
 .signup form button {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 footer {
-    background: #0d1b2a; /* Dark blue footer */
-    color: #e0e0e0;
+    background: #1a1a2e; /* Dark navy footer */
+    color: #d4d4d4;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    border-top: 1px solid #333;
 }
 
 .footer-links a {
-    color: #ffd700; /* Gold links */
+    color: #ffd700;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -173,6 +213,7 @@ footer {
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
+        padding: 20px;
     }
     nav ul {
         flex-direction: column;
@@ -182,9 +223,12 @@ footer {
         margin: 10px 0;
     }
     h1 {
-        font-size: 1.8em;
+        font-size: 2.5em;
     }
     .logo {
-        width: 150px; /* Slightly smaller logo on mobile */
+        width: 150px;
+    }
+    .features, .signup, .mentor-cta {
+        padding: 20px;
     }
 }
