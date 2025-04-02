@@ -6,13 +6,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f4f7fa;
-    color: #333;
+    background: #1a1a1a; /* Dark gray background */
+    color: #e0e0e0; /* Light gray text for readability */
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(135deg, #007bff, #00c4ff);
+    background: linear-gradient(135deg, #0d1b2a, #1b263b); /* Dark blue gradient */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -28,7 +28,12 @@ header {
 }
 
 .logo {
-    width: 120px;
+    width: 200px; /* Increased logo size */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
 }
 
 nav ul {
@@ -41,13 +46,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #b0c4de; /* Light steel blue for nav links */
     text-decoration: none;
     font-weight: 600;
 }
 
 nav ul li a:hover {
-    color: #ffd700;
+    color: #ffd700; /* Gold hover effect */
 }
 
 .hero {
@@ -57,6 +62,7 @@ nav ul li a:hover {
 h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
+    color: #ffd700; /* Gold for emphasis */
 }
 
 .hero p {
@@ -67,8 +73,8 @@ h1 {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background: #ffd700;
-    color: #007bff;
+    background: #ffd700; /* Gold button */
+    color: #0d1b2a; /* Dark blue text */
     text-decoration: none;
     border-radius: 25px;
     font-weight: 600;
@@ -76,19 +82,19 @@ h1 {
 }
 
 .btn:hover {
-    background: #ffeb3b;
+    background: #ffeb3b; /* Lighter gold on hover */
 }
 
 .features {
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 20px;
     text-align: center;
+    padding: 0 20px;
 }
 
 .features h2 {
     font-size: 2em;
-    color: #007bff;
+    color: #ffd700; /* Gold heading */
     margin-bottom: 30px;
 }
 
@@ -99,14 +105,14 @@ h1 {
 }
 
 .feature-item {
-    background: #fff;
+    background: #2c2c2c; /* Darker gray for cards */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .feature-item h3 {
-    color: #007bff;
+    color: #b0c4de; /* Light steel blue */
     margin-bottom: 10px;
 }
 
@@ -114,15 +120,15 @@ h1 {
     max-width: 800px;
     margin: 40px auto;
     padding: 30px;
-    background: #fff;
+    background: #2c2c2c; /* Darker gray background */
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .signup h2, .mentor-cta h2 {
     font-size: 2em;
-    color: #007bff;
+    color: #ffd700; /* Gold heading */
     margin-bottom: 20px;
 }
 
@@ -131,9 +137,15 @@ h1 {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #444; /* Dark border */
     border-radius: 5px;
     font-size: 1em;
+    background: #333; /* Dark input background */
+    color: #e0e0e0; /* Light text */
+}
+
+.signup form input::placeholder {
+    color: #888; /* Gray placeholder text */
 }
 
 .signup form button {
@@ -142,16 +154,20 @@ h1 {
 }
 
 footer {
-    background: #007bff;
-    color: #fff;
+    background: #0d1b2a; /* Dark blue footer */
+    color: #e0e0e0;
     text-align: center;
     padding: 20px;
 }
 
 .footer-links a {
-    color: #ffd700;
+    color: #ffd700; /* Gold links */
     text-decoration: none;
     margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #ffeb3b;
 }
 
 @media (max-width: 768px) {
@@ -167,5 +183,8 @@ footer {
     }
     h1 {
         font-size: 1.8em;
+    }
+    .logo {
+        width: 150px; /* Slightly smaller logo on mobile */
     }
 }
