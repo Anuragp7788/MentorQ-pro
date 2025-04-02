@@ -28,7 +28,7 @@ header {
 }
 
 .logo {
-    width: 200px; /* Increased logo size */
+    width: 400px; /* Increased logo size */
     transition: transform 0.3s ease;
 }
 
