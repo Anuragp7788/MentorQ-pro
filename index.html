@@ -3,57 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Mentor Platform - JEE & NEET Success</title>
+    <title>My Mentor Platform - India's Best JEE & NEET Mentorship</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img src="logo.png" alt="My Mentor Platform Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="test-portal.html">Test Portal</a></li>
-                <li><a href="become-mentor.html">Become a Mentor</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-        <h1>Unleash Your Potential</h1>
-        <p>Personalized JEE & NEET Mentorship by Toppers</p>
-        <a href="#signup" class="btn">Join Now</a>
+        <div class="nav-container">
+            <img src="logo.png" alt="My Mentor Platform Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="test-portal.html">Test Portal</a></li>
+                    <li><a href="become-mentor.html">Become a Mentor</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hero">
+            <h1>India's Best JEE & NEET Mentorship Platform</h1>
+            <p>Personalized 1:1 Guidance from IITians & Toppers</p>
+            <a href="#signup" class="btn">Grab Your Free Session</a>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <section class="content">
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li>1:1 Guidance from IITians & NITians</li>
-            <li>Advanced CBT Test Portal</li>
-            <li>Progress Tracking & Analytics</li>
-            <li>Expert Exam Strategies</li>
-        </ul>
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Why My Mentor Platform?</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>1:1 Mentorship</h3>
+                <p>Daily guidance from toppers tailored to your needs.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Smart Study Plans</h3>
+                <p>Balanced theory and practice for JEE/NEET success.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Progress Tracking</h3>
+                <p>Visualize your growth with cutting-edge tools.</p>
+            </div>
+            <div class="feature-item">
+                <h3>CBT Portal</h3>
+                <p>Practice with real exam-like tests anytime.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Signup Section -->
     <section id="signup" class="signup">
-        <h2>Get Started Today</h2>
+        <h2>Start Your Journey Today</h2>
+        <p>Join thousands of students excelling with our mentorship.</p>
         <form action="https://your-form-handler.com" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="tel" name="phone" placeholder="Your Phone" required>
-            <button type="submit" class="btn">Sign Up</button>
+            <button type="submit" class="btn">Sign Up Now</button>
         </form>
+    </section>
+
+    <!-- Become a Mentor CTA -->
+    <section class="mentor-cta">
+        <h2>Inspire the Next Generation</h2>
+        <p>Are you a topper? Join our mentor team!</p>
+        <a href="become-mentor.html" class="btn">Become a Mentor</a>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2025 My Mentor Platform. All rights reserved.</p>
-        <a href="privacy.html">Privacy Policy</a>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
     </footer>
-
-    <!-- Floating Badge -->
-    <div class="mentor-badge">Topper Guidance</div>
 </body>
 </html>
