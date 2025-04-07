@@ -1,0 +1,314 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+  }
+  /* Navigation Bar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 15px 30px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+}
+
+  .app {
+    text-align: center;
+  }
+  
+  .hero {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero .highlight {
+    color: #00dfc4;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-buttons .btn {
+    margin: 10px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+  }
+  
+  .btn.primary {
+    background-color: #00dfc4;
+  }
+  
+  .btn.secondary {
+    background-color: #007bff;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  .plans {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .plans h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+  }
+  
+  .plan-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .card {
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 16px;
+    width: 280px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card .price {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #00dfc4;
+    font-weight: bold;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .card ul li {
+    margin-bottom: 10px;
+  }
+  
+  .card.featured {
+    background: linear-gradient(to right, #00dfc4, #007bff);
+    color: white;
+  }
+  
+  .card.featured .btn {
+    background-color: #fff;
+    color: #007bff;
+  }
+  .login-section {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .login-section h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .login-form input {
+    padding: 12px;
+    width: 280px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .login-form button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .signup-link {
+    margin-top: 20px;
+    font-size: 0.95rem;
+  }
+  
+  .signup-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  /* Footer */
+.footer {
+  background-color: #101010;
+  color: #ffffff;
+  padding: 40px 30px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left h2 {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+}
+/* Plans Section */
+.plans-section {
+  padding: 60px 30px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #1e1e1e;
+}
+
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.plan-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px 25px;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.price {
+  font-size: 20px;
+  color: #0099ff;
+  margin-bottom: 20px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.plan-card ul li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.plan-btn {
+  padding: 10px 20px;
+  background-color: #0099ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.plan-btn:hover {
+  background-color: #007acc;
+}
+
+.plan-card.featured {
+  border: 2px solid #0099ff;
+}
+
