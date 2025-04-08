@@ -1,20 +1,25 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-    path: path.resolve(__dirname, 'public'),
-    publicPath: '/', // for React Router
-    clean: true, // optional: cleans old build files
+    publicPath: '/',
   },
+  mode: 'development',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
         test: /\.css$/,
@@ -25,16 +30,18 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html', // <-- use your base HTML file
-      filename: 'index.html',
-    }),
-  ],
   devServer: {
-    static: './public',
     historyApiFallback: true,
     port: 8080,
     open: true,
+    hot: true,
+    client: {
+      webSocketURL: 'auto://0.0.0.0:0/ws',
+    },
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
 };
