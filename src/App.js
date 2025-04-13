@@ -8,12 +8,10 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Resources from './pages/Resources';
 import About from './pages/About';
-import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/plans" element={<Plans />} />

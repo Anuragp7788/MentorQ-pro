@@ -1,21 +1,17 @@
-// src/pages/Login.js
+// src/components/AuthSidebar.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { setupRecaptcha, sendOTP, verifyOTP } from '../auth';
 import { storeUserIfNew } from '../utils/storeUser';
 
-const Login = () => {
-  const [step, setStep] = useState(1); // Step 1 = phone, Step 2 = OTP
+const AuthSidebar = ({ isOpen, onClose }) => {
+  const [step, setStep] = useState(1);
   const [phone, setPhone] = useState('');
   const [otp, setOtp] = useState('');
   const [confirmationResult, setConfirmationResult] = useState(null);
   const [message, setMessage] = useState('');
-  const navigate = useNavigate();
 
-  const handleSendOTP = async () => {
+  const handleSendOTP = () => {
     const formattedPhone = phone.startsWith('+91') ? phone : `+91${phone}`;
-    setPhone(formattedPhone);
-
     setupRecaptcha(formattedPhone, setConfirmationResult)
       .then(() => {
         sendOTP(formattedPhone, setConfirmationResult);
@@ -27,20 +23,19 @@ const Login = () => {
   const handleVerifyOTP = async () => {
     verifyOTP(otp, confirmationResult, async (user) => {
       await storeUserIfNew(user);
-      navigate('/dashboard');
+      onClose();
     }, (error) => setMessage(error.message));
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-sm">
-        <h2 className="text-xl font-bold mb-4 text-center">
-          {step === 1 ? 'Login or Create your account' : 'Enter OTP'}
-        </h2>
+    <div className={`fixed top-0 left-0 h-full w-80 bg-white shadow-lg transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 z-50`}>
+      <div className="p-4">
+        <button className="text-gray-600 float-right" onClick={onClose}>✕</button>
+        <h2 className="text-xl font-semibold mb-4">Login / Signup</h2>
 
-        <div className="text-sm text-center mb-4 text-gray-500">India (+91)</div>
+        <p className="text-sm text-gray-500 mb-1">India (+91)</p>
 
-        {step === 1 && (
+        {step === 1 ? (
           <>
             <input
               type="text"
@@ -51,17 +46,15 @@ const Login = () => {
             />
             <button
               onClick={handleSendOTP}
-              className="bg-blue-600 text-white w-full py-2 rounded-md font-medium"
+              className="bg-blue-600 text-white w-full py-2 rounded-md"
             >
               Continue
             </button>
-            <p className="text-sm text-center mt-2 text-blue-500 cursor-pointer">
+            <p className="text-sm text-blue-500 mt-2 text-center cursor-pointer">
               Continue with email
             </p>
           </>
-        )}
-
-        {step === 2 && (
+        ) : (
           <>
             <input
               type="text"
@@ -72,25 +65,19 @@ const Login = () => {
             />
             <button
               onClick={handleVerifyOTP}
-              className="bg-green-600 text-white w-full py-2 rounded-md font-medium"
+              className="bg-green-600 text-white w-full py-2 rounded-md"
             >
               Verify & Continue
             </button>
           </>
         )}
 
-        {message && (
-          <p className="text-sm text-red-500 text-center mt-3">{message}</p>
-        )}
-
         <div id="recaptcha-container"></div>
 
-        <p className="text-xs text-gray-400 text-center mt-4">
-          Having trouble? Visit our <span className="text-blue-500 underline cursor-pointer">Help Center</span>
-        </p>
+        {message && <p className="text-red-500 text-sm mt-3">{message}</p>}
       </div>
     </div>
   );
 };
 
-export default Login;
+export default AuthSidebar;
