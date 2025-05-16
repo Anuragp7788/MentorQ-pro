@@ -1,154 +1,195 @@
-// src/pages/Home.js
-import React, { useState } from 'react';
+
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/globals.css';
-import Footer from '../components/Footer';
-import LoginPopup from '../components/LoginPopup';
+import Navbar from '../components/Navbar.js';
+import Footer from '../components/Footer.js';
+import FeatureCard from '../components/FeatureCard.js';
 
 const Home = () => {
-  const [showLoginPopup, setShowLoginPopup] = useState(false);
-  const [defaultTab, setDefaultTab] = useState('login');
-  const [mobileNumber, setMobileNumber] = useState('');
+  const navigate = useNavigate();
 
-  const openLoginPopup = (e, tab = 'login') => {
-    e.preventDefault();
-    setDefaultTab(tab);
-    setShowLoginPopup(true);
-  };
+  useEffect(() => {
+    console.log('Home component rendered');
+  }, []);
 
-  const closeLoginPopup = () => setShowLoginPopup(false);
-
-  const handleOtpSubmit = (e) => {
-    e.preventDefault();
-    if (mobileNumber.length === 10) {
-      alert(`OTP sent to +91${mobileNumber}!`);
-    } else {
-      alert('Please enter a valid 10-digit mobile number.');
-    }
-  };
+  const features = [
+    {
+      title: '1:1 Mentorship (by only IITians)',
+      image: '/icons/mentorship.png',
+      description: 'Personalized sessions with IITian mentors.',
+      details: 'Get dedicated guidance from top IITians to clear doubts and build strategies tailored to your needs.',
+    },
+    {
+      title: 'Daily Mentor Calls',
+      image: '/icons/calls.png',
+      description: 'Regular calls for consistent support.',
+      details: 'Stay on track with daily check-ins to discuss progress, challenges, and next steps.',
+    },
+    {
+      title: 'Schedule Designed by Mentor',
+      image: '/icons/schedule.png',
+      description: 'Tailored study plans by mentors.',
+      details: 'Maximize preparation with custom schedules designed for your strengths and weaknesses.',
+    },
+    {
+      title: '24/7 Support via Chats',
+      image: '/icons/support.png',
+      description: 'Access mentors anytime in private groups.',
+      details: 'Join private group chats for round-the-clock doubt resolution and support.',
+    },
+    {
+      title: 'Tracking Sheet for Daily Activity',
+      image: '/icons/tracking.png',
+      description: 'Monitor study progress daily.',
+      details: 'Use tracking sheets to log tasks and review progress with mentors regularly.',
+    },
+    {
+      title: 'Weekly Progress Review',
+      image: '/icons/review.png',
+      description: 'Regular reviews to track progress.',
+      details: 'Weekly sessions with mentors to assess performance and adjust study plans.',
+    },
+    {
+      title: 'Bi-weekly Parents-Mentor Updates',
+      image: '/icons/parent-updates.png',
+      description: 'Keep parents informed.',
+      details: 'Bi-weekly updates to parents on student progress and mentor feedback.',
+    },
+    {
+      title: 'Weekly Feedbacks',
+      image: '/icons/feedback.png',
+      description: 'Feedback from mentors and mentees.',
+      details: 'Exchange weekly feedback to improve mentorship and learning experience.',
+    },
+    {
+      title: 'Private Telegram Groups',
+      image: '/icons/telegram.png',
+      description: 'Exclusive groups for mentors and students.',
+      details: 'Join private Telegram groups for each mentor and their students for seamless communication.',
+    },
+    {
+      title: 'Highly Repetitive Topics',
+      image: '/icons/topics.png',
+      description: 'Focus on high-yield topics.',
+      details: 'Study important and repetitive chapter-wise topics to boost exam performance.',
+    },
+    {
+      title: 'Chapter-wise PYQs',
+      image: '/icons/pyqs.png',
+      description: 'Practice with previous year questions.',
+      details: 'Access chapter-wise previous year questions to master key concepts.',
+    },
+    {
+      title: 'Easy Mentor Switch',
+      image: '/icons/mentor-switch.png',
+      description: 'Switch mentors if needed.',
+      details: 'Seamlessly switch to a different mentor for better compatibility or needs.',
+    },
+    {
+      title: '24/7 Team Support',
+      image: '/icons/team-support.png',
+      description: 'Support for any issues.',
+      details: 'Get help from our dedicated team for technical or mentorship-related issues anytime.',
+    },
+    {
+      title: 'Talk with Mentor to CEOs',
+      image: '/icons/escalation.png',
+      description: 'Escalation support for critical issues.',
+      details: 'Escalate concerns from mentors to senior mentors or CEOs if required.',
+    },
+    {
+      title: 'Post-JEE Career Support',
+      image: '/icons/career.png',
+      description: 'Networking and career guidance.',
+      details: 'Access a community of IITians for career support and networking post-JEE.',
+    },
+  ];
 
   return (
     <div className="home-page premium-theme">
-      <header className="navbar premium-navbar">
-        <div className="nav-container">
-          <img src="/logo.png" alt="MentorQ Pro Logo" className="logo enlarged-logo" />
-          <nav>
-            <ul className="nav-links">
-              <li><a href="/test-portal">Test Portal</a></li>
-              <li><a href="/resources">Resources</a></li>
-              <li><a href="/plans">Plans</a></li>
-              <li><a href="/become-mentor">Become a Mentor</a></li>
-              <li><a href="/contact">Contact</a></li>
-              <li>
-                <a href="#" onClick={(e) => openLoginPopup(e, 'login')}>
-                  Login
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="join-btn premium-btn"
-                  onClick={(e) => openLoginPopup(e, 'signup')}
-                >
-                  Join for Free
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-      <section className="hero premium-hero">
+      <Navbar />
+      <section id="home" className="hero premium-hero" data-testid="hero-section">
         <div className="hero-content">
           <div className="hero-left">
             <h1>
               Master JEE & NEET with <span className="highlight">MentorQ Pro</span>
             </h1>
-            <p>Join 5 lakh+ aspirants learning from India’s top IITian mentors. Start free, upgrade for success!</p>
+
+            <p>
+              Join thousands of aspirants guided by India’s top IITian and medical mentors. Unlock personalized mentorship, expert strategies, and proven study plans for success.
+            </p>
             <div className="cta-buttons">
-              <a href="/test-portal" className="btn primary premium-btn">Start Free Test</a>
-              <a href="/plans" className="btn secondary premium-btn">Explore Plans</a>
-            </div>
-          </div>
-          <div className="hero-right">
-            <div className="login-form premium-login-form">
-              <h2>Get Started</h2>
-              <p>Enter your mobile number for OTP</p>
-              <form onSubmit={handleOtpSubmit}>
-                <div className="phone-input">
-                  <select defaultValue="+91">
-                    <option value="+91">India (+91)</option>
-                  </select>
-                  <input
-                    placeholder="Mobile Number"
-                    type="tel"
-                    value={mobileNumber}
-                    onChange={(e) => setMobileNumber(e.target.value.replace(/\D/g, ''))}
-                    maxLength={10}
-                  />
-                </div>
-                <button type="submit" className="btn submit premium-btn">
-                  Send OTP
-                </button>
-              </form>
-              <p>
-                New here? <a href="/signup" className="signup-link">Join for Free</a>
-              </p>
+              <Link to="/jee" className="btn primary premium-btn">Explore Plans</Link>
+              <Link to="/jee" className="btn secondary premium-btn">Join Batch</Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="goals premium-section">
-        <h2>Your Goal, Our Mission</h2>
-        <p>Prepare for 100+ exams with MentorQ Pro</p>
-        <div className="goals-grid">
-          <a href="#" className="goal-card premium-card">JEE Mains</a>
-          <a href="#" className="goal-card premium-card">Jee Advanced</a>
-          <a href="#" className="goal-card premium-card">NEET UG</a> 
-        </div>
-        <a href="#" className="see-all">See All Goals (100+)</a>
+      <section id="about" className="premium-section">
+        <h2>About Us</h2>
+        <p>
+          MentorQ Pro is dedicated to empowering JEE and NEET aspirants with world-class mentorship. Our team of IITians and medical professionals provides personalized guidance to help you achieve your dreams.
+        </p>
       </section>
-
-      <section className="features premium-section">
-        <h2>Why Choose MentorQ Pro?</h2>
+      <section id="why-mentorq" className="premium-section">
+        <h2>Why MentorQ Pro?</h2>
+        <p>
+          We offer a unique blend of personalized mentorship, cutting-edge resources, and continuous support to ensure you excel in your JEE and NEET journey.
+        </p>
+      </section>
+      <section id="features" className="features premium-section" data-testid="features-section">
+        <h2>Key Features</h2>
         <div className="features-grid">
-          <div className="feature-card premium-card">
-            <h3>Daily Mentor Sessions</h3>
-            <p>Interact with IITian mentors, ask doubts, and get live guidance every day.</p>
+          {features.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              title={feature.title}
+              image={feature.image}
+              description={feature.description}
+              details={feature.details}
+            />
+          ))}
+        </div>
+      </section>
+      <section id="plans" className="plans premium-section">
+        <h2>Our Plans</h2>
+        <div className="plans-grid">
+          <div className="plan-card premium-card">
+            <h3>1-Month Plan</h3>
+            <p className="price">INR 1499</p>
+            <ul>
+              <li>1:1 Mentorship</li>
+              <li>Daily Mentor Calls</li>
+              <li>Custom Schedule</li>
+            </ul>
+            <a href="https://forms.gle/your-form-link" className="btn primary premium-btn">Join Batch</a>
           </div>
-          <div className="feature-card premium-card">
-            <h3>Practice & Test Series</h3>
-            <p>Access mock tests, practice questions, and PDFs for revision anytime.</p>
-          </div>
-          <div className="feature-card premium-card">
-            <h3>Learn Anytime, Anywhere</h3>
-            <p>One subscription unlocks all live and recorded sessions across devices.</p>
-          </div>
-          <div className="feature-card premium-card">
-            <h3>Get the MentorQ App</h3>
-            <p>Download lessons and study on-the-go with our mobile app.</p>
+          <div className="plan-card premium-card">
+            <h3>3-Month Plan</h3>
+            <p className="price">INR 3999</p>
+            <ul>
+              <li>1:1 Mentorship</li>
+              <li>Daily Mentor Calls</li>
+              <li>Custom Schedule</li>
+              <li>24/7 Support via Chats</li>
+              <li>Daily Activity Tracking</li>
+              <li>Weekly Progress Review</li>
+              <li>Bi-weekly Parents-Mentor Updates</li>
+            </ul>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=QYI3s5GnbEKjaDYZtgHQrdvzo2Ruw9dDgjBm_h-cYNhUOTlMU09aTFg4MUU3NEpMWFlNWFNVMDlERS4u" className="btn primary premium-btn">Join Batch</a>
           </div>
         </div>
       </section>
-
-      <section className="testimonials premium-section">
-        <h2>What Our Students Say</h2>
-        <div className="testimonials-grid">
-          <div className="testimonial-card premium-card">
-            <p>“MentorQ Pro’s IITian mentors helped me score 95% in JEE Mains!”</p>
-            <h3>- Priya S., JEE 2024</h3>
-          </div>
-          <div className="testimonial-card premium-card">
-            <p>“The daily sessions and test series were a game-changer for NEET prep.”</p>
-            <h3>- Arjun K., NEET 2023</h3>
-          </div>
-          <div className="testimonial-card premium-card">
-            <p>“Free resources got me started, and the Pro plan sealed my success.”</p>
-            <h3>- Sneha R., JEE 2025 Aspirant</h3>
-          </div>
+      <section id="contact" className="contact premium-section">
+        <h2>Contact Us</h2>
+        <p>For any queries, reach out to us:</p>
+        <div className="contact-links">
+          <a href="mailto:support@mentorqpro.com">support@mentorqpro.com</a>
+          <a href="https://wa.me/919876543210">WhatsApp: +91 9876543210</a>
         </div>
       </section>
-
       <Footer />
 
       {showLoginPopup && (
