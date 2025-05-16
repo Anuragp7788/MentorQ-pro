@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+mentorq-backend/mentorq-pro-firebase-adminsdk-fbsvc-850dc013c0.json
+mentorq-backend/*.json
+mentorq-backend/.env
