@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/globals.css';
@@ -114,6 +115,7 @@ const Home = () => {
             <h1>
               Master JEE & NEET with <span className="highlight">MentorQ Pro</span>
             </h1>
+
             <p>
               Join thousands of aspirants guided by India’s top IITian and medical mentors. Unlock personalized mentorship, expert strategies, and proven study plans for success.
             </p>
@@ -124,6 +126,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section id="about" className="premium-section">
         <h2>About Us</h2>
         <p>
@@ -188,6 +191,14 @@ const Home = () => {
         </div>
       </section>
       <Footer />
+
+      {showLoginPopup && (
+        <LoginPopup
+          isOpen={showLoginPopup}
+          onClose={closeLoginPopup}
+          defaultTab={defaultTab}
+        />
+      )}
     </div>
   );
 };

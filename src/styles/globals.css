@@ -1,11 +1,12 @@
+
 /* globals.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
 
-* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -25,11 +26,13 @@ body {
   padding: 1rem 2rem;
   position: fixed;
   width: 100%;
+
   top: 0;
   z-index: 1000;
 }
 
 .nav-container {
+
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -38,6 +41,7 @@ body {
 }
 
 .logo {
+
   height: 40px;
   width: 160px;
   object-fit: contain;
@@ -45,6 +49,7 @@ body {
 
 .nav-links {
   display: flex;
+
   list-style: none;
 }
 
@@ -55,6 +60,7 @@ body {
 .nav-links a {
   color: #ffffff;
   text-decoration: none;
+
   font-size: 1rem;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -365,6 +371,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   margin-bottom: 1rem;
+
 }
 
 .footer-brand p {
@@ -394,7 +401,12 @@ body {
 .footer-column a {
   color: #cccccc;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #38bdf8;
 }
 
 .footer-column a:hover {
@@ -489,3 +501,4 @@ body {
     font-size: 0.85rem;
   }
 }
+
